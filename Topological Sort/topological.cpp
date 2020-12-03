@@ -30,9 +30,13 @@ int main(void) {
 	for (int i = 0; i < verticesNum; i++) {
 		if (!visited[i]) DFS(i, result);
 	}
+	vector <int> output, output1;
 	while(! result.empty()) {
-		cout << result.top() << " ";
+		output.push_back(result.top());
 		result.pop();
 	}
+	for(int j = output.size()-1 ; j >= 0 ; j--) output1.push_back(output[j]);
+	for(int j = 0 ; j < output1.size() ; j++) cout << output1[j] <<" ";
+	cout << endl;
 	return 0;
 }
